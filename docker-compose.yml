@@ -1,0 +1,33 @@
+version: '3.9'
+services:
+  atom-api:
+    build:
+      context: ./app/backend
+      dockerfile: Dockerfile
+    #volumes:
+    #  - ./app/backend:/app - конфликт с node_modules, хоть она и в игноре
+    restart: always
+    ports:
+      - "3000:3000"
+    networks:
+      - apinet
+
+  atom-client:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    volumes:
+      - ./app/frontend:/data/atom-task.client
+      - ./nginx/hosts:/etc/nginx/sites-enabled
+    ports:
+      - "80:80"
+    depends_on:
+      - atom-api
+    restart: always
+    networks:
+      - apinet
+
+networks:
+  apinet:
+    name: apinet
+    driver: bridge

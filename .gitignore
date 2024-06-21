@@ -1,0 +1,13 @@
+.git
+.idea
+idea/
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+./app/backend/node_modules
+./app/backend/dist
+./app/backend/.dist
+./app/backend/build
+./app/backend/.build
