@@ -38,6 +38,16 @@
 
 ----
 
+### Пример авторизации для клиентской части:
+Данные взяты из тестовых данных для вставки из файла [insert_data.sqlite.sql](./app/backend/SQLite/insert_data.sqlite.sql) 
+ - **Логины:** 
+   - _ivanov_ 
+   - _petrov_ 
+   - _sidorov_
+ - **Пароль:** _qwerty123_
+
+----
+
 LICENSE: [Лицензионное соглашение](./readme/license.md)
 
 ---
